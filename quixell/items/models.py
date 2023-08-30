@@ -8,10 +8,13 @@ class Category(models.Model):
       verbose_name = 'Category'
       verbose_name_plural = 'Categories'
       ordering = ('name', )
+    
+    def __str__(self) -> str:
+       return self.name
 
 
 
-class Item:
+class Item(models.Model):
     name = models.CharField(max_length=255)
     category = models.ForeignKey(Category, related_name='items', on_delete=models.CASCADE)
     description = models.TextField(blank=True, null=True)
@@ -21,5 +24,7 @@ class Item:
     created_by = models.ForeignKey(User, related_name='items',  on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self) -> str:
        return self.name
+    
