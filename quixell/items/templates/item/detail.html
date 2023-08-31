@@ -31,7 +31,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
         {% for item in related_items %}
             <div class="">
-                <a href="{% url 'item:detail' item.id %}">
+                <a href="{% url 'items:detail' item.id %}">
                     <div class="p-6 bg-white rounded-b-xl ">
                         <img src="{{item.image.url}}" alt="{{item.name}}" class="  rounded-t-xl object-contain w-[200px] h-[200px]">
                     </div>
